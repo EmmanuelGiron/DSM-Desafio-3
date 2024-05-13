@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dsmdesafiopractico3gc180313mm200149.db.HelperDB
+import android.content.Intent
 
 class ListaListasCompras : AppCompatActivity() {
 
@@ -30,6 +31,13 @@ class ListaListasCompras : AppCompatActivity() {
         dbHelper = HelperDB(this)
         db = dbHelper.readableDatabase
 
+        var btnIngresaLista: Button
+        btnIngresaLista = findViewById(R.id.btnIrIngresoLista)
+
+        btnIngresaLista.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         //Llenando listas mutbales
             val cursor3: Cursor? = db.rawQuery("SELECT id,titulo,fecha FROM ListaCompras", null)
@@ -48,6 +56,8 @@ class ListaListasCompras : AppCompatActivity() {
             val adapter = CustomAdapterListasCompras(ids,titulos,fechas)
             recyclerViewListas.layoutManager = LinearLayoutManager(this)
             recyclerViewListas.adapter = adapter
+
+
 
         }
     }
