@@ -20,7 +20,7 @@ import java.util.Calendar
 import java.util.Locale
 import kotlin.random.Random
 import android.content.Context
-
+import android.content.Intent
 
 
 //import com.example.dsmdesafiopractico3gc180313mm200149.utils.MyDialog
@@ -40,6 +40,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val recyclerView = findViewById<RecyclerView>(R.id.recycleProductos)?: return
+
+        var arrowLeft: ImageButton
+
+        arrowLeft = findViewById(R.id.btn_back)
+
+        arrowLeft.setOnClickListener{
+            val intent = Intent(this,ListaListasCompras::class.java)
+            startActivity(intent)
+        }
 
         //Datos
         var txtTitulo : EditText

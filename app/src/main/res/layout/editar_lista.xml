@@ -7,6 +7,28 @@
     android:layout_height="match_parent"
     tools:context=".EditarListaCompras">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:title="">
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:contentDescription="@string/back_button_description"
+            style="?android:attr/borderlessButtonStyle"
+            android:onClick="onBackPressed" />
+    </androidx.appcompat.widget.Toolbar>
+
 
     <TextView
         android:id="@+id/textView"

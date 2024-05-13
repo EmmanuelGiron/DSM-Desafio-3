@@ -1,10 +1,12 @@
 package com.example.dsmdesafiopractico3gc180313mm200149
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -31,6 +33,15 @@ class EditarListaCompras: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.editar_lista)
         val recyclerViewListas = findViewById<RecyclerView>(R.id.recycleProductosEditar)?: return
+
+        var arrowLeft: ImageButton
+
+        arrowLeft = findViewById(R.id.btn_back)
+
+        arrowLeft.setOnClickListener{
+            val intent = Intent(this,ListaListasCompras::class.java)
+            startActivity(intent)
+        }
 
 
         var txtID = TextView(this)
