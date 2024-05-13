@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:id="@+id/card_view_lista_compras"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    android:layout_margin="12dp"
+    android:padding="4dp"
+    card_view:cardBackGroudColor="#FFFFFF"
+    card_view:cardCornerRadius="20dp"
+    card_view:cardElevation="6dp"
+    card_view:contentPaddind="4dp"
+    app:cardUseCompatPadding="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="434dp"
+        android:layout_height="466dp"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:id="@+id/numeroLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--ID Lista de compras-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ID"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/IDCardID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ID" />
+
+            <TextView
+                android:id="@+id/estadoCardID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.75"
+                android:text="Estado"
+                android:textColor="#00913f"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tituloLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tituloLayout"
+            android:orientation="horizontal"
+            android:paddingTop="25dp">
+
+            <TextView
+                android:id="@+id/tituloCardID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="titulo"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/descripcionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Fecha de entrega:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fechaCardID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="50dp"
+                android:text="fecha" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/informacionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--info del ticket-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/productoayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="35dp">
+            <!--Productos-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/productosEnListaCardID"
+                android:layout_width="346dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/botones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="35dp">
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="320dp"
+            android:text="Editar" />
+
+        <Button
+            android:id="@+id/btnBorrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="320dp"
+            android:text="Eliminar" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="115dp"
+        android:text="Productos Agregados"
+        android:textStyle="bold" />
+</androidx.cardview.widget.CardView>
