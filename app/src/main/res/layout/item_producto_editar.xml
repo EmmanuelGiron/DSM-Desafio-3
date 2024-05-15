@@ -32,6 +32,25 @@
                 android:layout_height="wrap_content"
                 android:text="Producto"
                 android:textStyle="bold"/>
+            <!--ID del producto en la tabla ProdutosEnLista-->
+            <TextView
+                android:id="@+id/IDCardProductoEnLaLista"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text=""
+                android:textStyle="bold"/>
+
+            <!--ID del lista de compras a la que pertence el producto-->
+            <TextView
+                android:id="@+id/IDCardListaDeCompras"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Producto"
+                android:textStyle="bold"/>
 
             <ImageView
                 android:id="@+id/btnEliminarProductoAgregado"
@@ -45,6 +64,27 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:srcCompat="@android:drawable/ic_menu_manage" />
+
+            <TextView
+                android:id="@+id/editado"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="#122EED"
+                android:text="Producto Editado!"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/eliminado"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Producto Eliminado!"
+                android:textColor="#ED1C24"
+                android:textStyle="bold"/>
+
+
         </LinearLayout>
 
     </RelativeLayout>

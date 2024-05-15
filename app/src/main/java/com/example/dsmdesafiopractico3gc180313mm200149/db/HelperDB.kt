@@ -9,6 +9,7 @@ class HelperDB(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
     companion object {
         const val DATABASE_VERSION = 1
         const val DATABASE_NAME = "comprados.db"
+        const val TABLE_PRODUCTOS_EN_LISTA = "ProductosEnLista"
     }
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -32,5 +33,12 @@ class HelperDB(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         // Aquí puedes realizar operaciones de actualización de la base de datos si es necesario
         // Por ejemplo, eliminar tablas antiguas, agregar nuevas, etc.
+    }
+
+    fun deleteProductoEnLista(id: Int): Int {
+        val db = this.writableDatabase
+        val result = db.delete(TABLE_PRODUCTOS_EN_LISTA, "id=?", arrayOf(id.toString()))
+        db.close()
+        return result
     }
 }

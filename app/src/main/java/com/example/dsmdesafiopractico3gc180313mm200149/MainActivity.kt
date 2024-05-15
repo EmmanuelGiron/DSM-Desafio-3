@@ -85,6 +85,8 @@ class MainActivity : AppCompatActivity() {
                         put("idListaCompras", newRowId)
                     }
                     db?.insert("ProductosEnLista", null, valoresTablaProductosEnLista)
+                    val intent = Intent(this, ListaListasCompras::class.java)
+                    startActivity(intent)
                 }
 
             } else {
@@ -97,7 +99,7 @@ class MainActivity : AppCompatActivity() {
         btnAgregarProducto.setOnClickListener{
             productosAgregados.add(txtProducto.text.toString())
             txtProducto.setText("")
-            println(productosAgregados)
+            //println(productosAgregados)
             val adapter = CustomAdapterProductos(productosAgregados)
             recyclerView.layoutManager = LinearLayoutManager(this)
             recyclerView.adapter = adapter
